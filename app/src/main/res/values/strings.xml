@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Movies DB</string>
     <string name="movie_image">movie image</string>
+    <string name="home">Home</string>
+    <string name="popular">Popular</string>
+    <string name="latest">Latest</string>
+    <string name="favorites">Favorites</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

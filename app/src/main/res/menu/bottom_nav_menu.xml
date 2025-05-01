@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home_movies"
+        android:icon="@drawable/home"
+        android:title="@string/home"/>
+
+    <item android:id="@+id/popular_movies"
+        android:icon="@drawable/popular"
+        android:title="@string/popular"/>
+
+    <item android:id="@+id/latest_movies"
+        android:icon="@drawable/latest"
+        android:title="@string/latest"/>
+
+    <item android:id="@+id/favorite_movies"
+        android:icon="@drawable/latest"
+        android:title="@string/favorites"/>
+
+</menu>

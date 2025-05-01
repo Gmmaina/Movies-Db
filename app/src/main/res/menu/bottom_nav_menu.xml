@@ -14,7 +14,7 @@
         android:title="@string/latest"/>
 
     <item android:id="@+id/favorite_movies"
-        android:icon="@drawable/latest"
+        android:icon="@drawable/favorite_24px"
         android:title="@string/favorites"/>
 
 </menu>

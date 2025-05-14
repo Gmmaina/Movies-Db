@@ -7,18 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesdb.R
 import com.example.moviesdb.adapter.MoviesAdapter
 import com.example.moviesdb.data.MovieModel
 import com.example.moviesdb.data.Result
-import com.example.moviesdb.databinding.FragmentPopularMoviesBinding
+import com.example.moviesdb.databinding.FragmentTopRatedMoviesBinding
 import com.example.moviesdb.network.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PopularMoviesFragment : Fragment() {
-    private lateinit var binding: FragmentPopularMoviesBinding
+class TopRatedMoviesFragment : Fragment() {
+    private lateinit var binding: FragmentTopRatedMoviesBinding
     private val apiKey = "c89168cb22d9a8b1982f7cb49aabe573"
 
     private var currentPage = 1
@@ -32,10 +31,10 @@ class PopularMoviesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
+        binding = FragmentTopRatedMoviesBinding.inflate(inflater, container, false)
 
         setUpRecyclerView()
-        fetchPopularMovies(currentPage)
+        fetchTopRatedMovies(currentPage)
 
         return binding.root
     }
@@ -54,16 +53,16 @@ class PopularMoviesFragment : Fragment() {
                 val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
                 if (!isLoading && currentPage < totalPages && lastVisibleItem >= totalItemCount - 5) {
-                    fetchPopularMovies(++currentPage)
+                    fetchTopRatedMovies(++currentPage)
                 }
             }
         })
     }
 
-    private fun fetchPopularMovies(page: Int) {
+    private fun fetchTopRatedMovies(page: Int) {
         isLoading = true
         binding.loading.visibility = View.VISIBLE
-        RetrofitInstance.api.getPopularMovies(apiKey, page)
+        RetrofitInstance.api.getTopRatedMovies(apiKey, page)
             .enqueue(object : Callback<MovieModel> {
                 override fun onResponse(call: Call<MovieModel>, response: Response<MovieModel>) {
                     binding.loading.visibility = View.GONE

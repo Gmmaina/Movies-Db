@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/home_movies">
-
-    <fragment
-        android:id="@+id/home_movies"
-        android:name="com.example.moviesdb.ui.HomeFragment"
-        android:label="Movies"
-        tools:layout="@layout/fragment_home"/>
+    app:startDestination="@id/popular_movies">
 
     <fragment
         android:id="@+id/popular_movies"
@@ -18,15 +12,21 @@
         tools:layout="@layout/fragment_popular_movies"/>
 
     <fragment
-        android:id="@+id/latest_movies"
-        android:name="com.example.moviesdb.ui.LatestMoviesFragment"
-        android:label="Latest Movies"
-        tools:layout="@layout/fragment_latest_movies"/>
+        android:id="@+id/top_rated_movies"
+        android:name="com.example.moviesdb.ui.TopRatedMoviesFragment"
+        android:label="Top Rated Movies"
+        tools:layout="@layout/fragment_upcoming_movies"/>
 
     <fragment
-        android:id="@+id/favorite_movies"
-        android:name="com.example.moviesdb.ui.FavoriteMoviesFragment"
-        android:label="Favorite Movies"
-        tools:layout="@layout/fragment_favorite_movies"/>
+        android:id="@+id/now_playing"
+        android:name="com.example.moviesdb.ui.NowPlayingMoviesFragment"
+        android:label="Now Playing"
+        tools:layout="@layout/fragment_now_playing_movies"/>
+
+    <fragment
+        android:id="@+id/upcoming_movies"
+        android:name="com.example.moviesdb.ui.UpcomingMoviesFragment"
+        android:label="Upcoming Movies"
+        tools:layout="@layout/fragment_top_rated_movies"/>
 
 </navigation>

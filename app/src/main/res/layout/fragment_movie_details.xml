@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Backdrop Image -->
+        <ImageView
+            android:id="@+id/backdrop_img"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/img" />
+
+        <!-- Poster Image with Card Effect -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poster_card"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="-90dp"
+            android:elevation="8dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/backdrop_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/title_tv">
+
+            <ImageView
+                android:id="@+id/poster_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/backdrop_img"
+            app:layout_constraintStart_toEndOf="@id/poster_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Walking Dead" />
+
+        <!-- Release Date -->
+        <TextView
+            android:id="@+id/release_date_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toBottomOf="@id/title_tv"
+            app:layout_constraintStart_toEndOf="@id/poster_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Release: 2023-12-10" />
+
+        <!-- Rating with Star Icon -->
+        <TextView
+            android:id="@+id/rating_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/poster_card"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="⭐ 8.2/10" />
+
+        <!-- Overview -->
+        <TextView
+            android:id="@+id/overview_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            app:layout_constraintTop_toBottomOf="@id/rating_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="A post-apocalyptic horror series focusing on survival after a zombie outbreak. Characters navigate trust, loyalty, and danger in a broken world." />
+
+        <!-- Watch Trailer Button -->
+        <Button
+            android:id="@+id/watch_trailer_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="▶ Watch Trailer"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/overview_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
